@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                 puntos_p2+=rand
                 num_tiro++
             }
-            else{
+            else if (num_tiro == 7){
                 val ganador = if(puntos_p1 > puntos_p2){
                     "Jugador 1 es el Ganador"
                 }
@@ -48,11 +48,16 @@ class MainActivity : AppCompatActivity() {
                     "Empate"
                 }
                 mensaje.text = ganador
-                total_tiros = 0
-                num_tiro = 1
-                puntos_p1 = 0
-                puntos_p2 = 0
                 roll_dice.text = "Reiniciar"
+                num_tiro++
+            }
+            else{
+                    mensaje.text = "Bienvenidos"
+                    total_tiros = 0
+                    num_tiro = 1
+                    puntos_p1 = 0
+                    puntos_p2 = 0
+                    roll_dice.text = "Jugador 1"
             }
         }
 
